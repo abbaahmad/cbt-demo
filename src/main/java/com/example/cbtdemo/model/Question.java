@@ -28,4 +28,8 @@ public class Question {
     private Set<String> options;
 
     private String answer;
+
+    private QuestionType questionType;
+
+    private Double scorePoint;
 }
