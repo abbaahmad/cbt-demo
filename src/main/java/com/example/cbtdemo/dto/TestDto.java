@@ -1,5 +1,6 @@
 package com.example.cbtdemo.dto;
 
+import com.example.cbtdemo.model.TestTaker;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -23,6 +24,8 @@ public class TestDto {
     private LocalDateTime start;
     private Duration duration;
     private boolean isTimed;
+    private Double cutOff;
+    private Set<TestTakerDto> testTakers;
     private Set<QuestionDto> questions;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime created;

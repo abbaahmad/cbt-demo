@@ -8,9 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -38,6 +36,13 @@ public class TestRequest {
     private int duration;
 
     private boolean isTimed;
+
+    @Min(value=0, message="Cut off cannot be less than 0")
+    @Max(value=100, message="Cut off cannot be more than 100")
+    private Double cutOff; //TODO: Determine max score possible and substitute for '100'
+
+    //@NotEmpty(message = "Please add candidates to take the test")
+    private Set<TestTakerRequest> testTakers;
 
     private Set<QuestionRequest> questions;
 }

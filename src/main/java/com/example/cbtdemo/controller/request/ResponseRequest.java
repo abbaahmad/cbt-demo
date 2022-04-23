@@ -1,20 +1,15 @@
-package com.example.cbtdemo.dto;
+package com.example.cbtdemo.controller.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-import java.util.Set;
-
 @Data
 @Accessors(chain = true)
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class QuestionDto {
-    private long id;
-    private int number;
-    private String text;
-    private String answer;
-    private Set<String> options;
+public class ResponseRequest {
+
+    private String response;
 }

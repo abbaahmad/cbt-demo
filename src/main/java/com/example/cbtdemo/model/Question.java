@@ -22,6 +22,8 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "question_sequence")
     private Long id;
 
+    private int number;
+
     private String text;
 
     @ElementCollection

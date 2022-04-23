@@ -6,8 +6,11 @@ import com.example.cbtdemo.dto.mapper.QuestionMapper;
 import com.example.cbtdemo.dto.mapper.TestMapper;
 import com.example.cbtdemo.model.Question;
 import com.example.cbtdemo.model.Test;
+import com.example.cbtdemo.model.TestTaker;
 import com.example.cbtdemo.repository.QuestionRepository;
+import com.example.cbtdemo.repository.ResponseRepository;
 import com.example.cbtdemo.repository.TestRepository;
+import com.example.cbtdemo.repository.TestTakerRepository;
 import com.example.cbtdemo.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +27,12 @@ public class TestServiceImpl implements TestService {
 
     @Autowired
     QuestionRepository questionRepository;
+
+    @Autowired
+    TestTakerRepository testTakerRepository;
+
+    @Autowired
+    ResponseRepository responseRepository;
 
     @Override
     @Transactional

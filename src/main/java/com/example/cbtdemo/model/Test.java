@@ -51,9 +51,12 @@ public class Test {
     @ToString.Exclude
     private Set<Question> questions;
 
-    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name="test_takers")
-    @JoinColumn(name="test_taker_id")
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+            name="test_takers",
+            joinColumns = @JoinColumn(name="test_id"),
+            inverseJoinColumns = @JoinColumn(name = "test_taker_id")
+    )
     private Set<TestTaker> testTakers;
 
     private Double cutOff;

@@ -6,22 +6,18 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Data
 @Accessors(chain = true)
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class QuestionRequest {
+public class TestTakerRequest {
+    @NotBlank(message = "Please provide first name")
+    private String first_name;
 
-    @NotNull
-    private int number;
+    @NotBlank(message = "Please provide last name")
+    private String last_name;
 
-    @NotBlank(message = "Question cannot be empty!")
-    private String text;
-
-    private Set<String> options;
-
-    private String answer;
+    private Set<TestRequest> testsTaken;
 }
